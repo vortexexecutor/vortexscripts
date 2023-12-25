@@ -1,0 +1,505 @@
+-- << GUI >> --
+
+local AdvancedUserInfo = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local PlayerList = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local UserID = Instance.new("TextLabel")
+local Profile = Instance.new("ImageLabel")
+local Distance = Instance.new("TextLabel")
+local Health = Instance.new("TextLabel")
+local AccountAge = Instance.new("TextLabel")
+local Team = Instance.new("TextLabel")
+local PlayerPosition = Instance.new("TextLabel")
+local Sitting = Instance.new("TextLabel")
+local Jumping = Instance.new("TextLabel")
+local View = Instance.new("TextButton")
+local Inventory = Instance.new("TextLabel")
+local InventoryFrame = Instance.new("Frame")
+local Holder = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Teleport = Instance.new("TextButton")
+local Copy = Instance.new("TextButton")
+local YourPosition = Instance.new("TextLabel")
+
+AdvancedUserInfo.Name = "AdvancedUserInfo"
+AdvancedUserInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AdvancedUserInfo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = AdvancedUserInfo
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(0, 400, 0, 300)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Frame
+TopBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(1, 0, 0, 30)
+
+Title.Name = "Title"
+Title.Parent = TopBar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(1, 0, 1, 0)
+Title.Font = Enum.Font.SourceSansSemibold
+Title.Text = "Advanced User Info"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 16.000
+
+Close.Name = "Close"
+Close.Parent = TopBar
+Close.AnchorPoint = Vector2.new(1, 0)
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(1, 0, 0, 0)
+Close.Size = UDim2.new(0, 30, 0, 30)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "×"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 32.000
+
+PlayerList.Name = "PlayerList"
+PlayerList.Parent = Frame
+PlayerList.Active = true
+PlayerList.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerList.BackgroundTransparency = 1.000
+PlayerList.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerList.BorderSizePixel = 0
+PlayerList.Position = UDim2.new(0, 0, 0, 34)
+PlayerList.Size = UDim2.new(0, 100, 1, -38)
+PlayerList.CanvasSize = UDim2.new(0, 0, 0, 0)
+PlayerList.ScrollBarThickness = 0
+
+UIListLayout.Parent = PlayerList
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 4)
+
+UserID.Name = "UserID"
+UserID.Parent = Frame
+UserID.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UserID.BackgroundTransparency = 1.000
+UserID.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UserID.BorderSizePixel = 0
+UserID.Position = UDim2.new(0, 104, 0, 34)
+UserID.Size = UDim2.new(0, 200, 0, 20)
+UserID.Font = Enum.Font.SourceSans
+UserID.Text = "UserID:"
+UserID.TextColor3 = Color3.fromRGB(255, 255, 255)
+UserID.TextSize = 14.000
+UserID.TextXAlignment = Enum.TextXAlignment.Left
+
+Profile.Name = "Profile"
+Profile.Parent = Frame
+Profile.AnchorPoint = Vector2.new(1, 0)
+Profile.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Profile.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Profile.BorderSizePixel = 0
+Profile.Position = UDim2.new(1, -4, 0, 34)
+Profile.Size = UDim2.new(0, 50, 0, 50)
+Profile.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+Distance.Name = "Distance"
+Distance.Parent = Frame
+Distance.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Distance.BackgroundTransparency = 1.000
+Distance.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Distance.BorderSizePixel = 0
+Distance.Position = UDim2.new(0, 104, 0, 54)
+Distance.Size = UDim2.new(0, 200, 0, 20)
+Distance.Font = Enum.Font.SourceSans
+Distance.Text = "Distance:"
+Distance.TextColor3 = Color3.fromRGB(255, 255, 255)
+Distance.TextSize = 14.000
+Distance.TextXAlignment = Enum.TextXAlignment.Left
+
+Health.Name = "Health"
+Health.Parent = Frame
+Health.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Health.BackgroundTransparency = 1.000
+Health.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Health.BorderSizePixel = 0
+Health.Position = UDim2.new(0, 104, 0, 74)
+Health.Size = UDim2.new(0, 200, 0, 20)
+Health.Font = Enum.Font.SourceSans
+Health.Text = "Health:"
+Health.TextColor3 = Color3.fromRGB(255, 255, 255)
+Health.TextSize = 14.000
+Health.TextXAlignment = Enum.TextXAlignment.Left
+
+AccountAge.Name = "AccountAge"
+AccountAge.Parent = Frame
+AccountAge.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AccountAge.BackgroundTransparency = 1.000
+AccountAge.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AccountAge.BorderSizePixel = 0
+AccountAge.Position = UDim2.new(0, 104, 0, 94)
+AccountAge.Size = UDim2.new(0, 200, 0, 20)
+AccountAge.Font = Enum.Font.SourceSans
+AccountAge.Text = "Account Age:"
+AccountAge.TextColor3 = Color3.fromRGB(255, 255, 255)
+AccountAge.TextSize = 14.000
+AccountAge.TextXAlignment = Enum.TextXAlignment.Left
+
+Team.Name = "Team"
+Team.Parent = Frame
+Team.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Team.BackgroundTransparency = 1.000
+Team.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Team.BorderSizePixel = 0
+Team.Position = UDim2.new(0, 104, 0, 114)
+Team.Size = UDim2.new(0, 200, 0, 20)
+Team.Font = Enum.Font.SourceSans
+Team.Text = "Team:"
+Team.TextColor3 = Color3.fromRGB(255, 255, 255)
+Team.TextSize = 14.000
+Team.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayerPosition.Name = "PlayerPosition"
+PlayerPosition.Parent = Frame
+PlayerPosition.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerPosition.BackgroundTransparency = 1.000
+PlayerPosition.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayerPosition.BorderSizePixel = 0
+PlayerPosition.Position = UDim2.new(0, 104, 0, 134)
+PlayerPosition.Size = UDim2.new(0, 200, 0, 20)
+PlayerPosition.Font = Enum.Font.SourceSans
+PlayerPosition.Text = "Position:"
+PlayerPosition.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerPosition.TextSize = 14.000
+PlayerPosition.TextXAlignment = Enum.TextXAlignment.Left
+
+Sitting.Name = "Sitting"
+Sitting.Parent = Frame
+Sitting.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Sitting.BackgroundTransparency = 1.000
+Sitting.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Sitting.BorderSizePixel = 0
+Sitting.Position = UDim2.new(0, 104, 0, 154)
+Sitting.Size = UDim2.new(0, 200, 0, 20)
+Sitting.Font = Enum.Font.SourceSans
+Sitting.Text = "Sitting:"
+Sitting.TextColor3 = Color3.fromRGB(255, 255, 255)
+Sitting.TextSize = 14.000
+Sitting.TextXAlignment = Enum.TextXAlignment.Left
+
+Jumping.Name = "Jumping"
+Jumping.Parent = Frame
+Jumping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Jumping.BackgroundTransparency = 1.000
+Jumping.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Jumping.BorderSizePixel = 0
+Jumping.Position = UDim2.new(0, 104, 0, 174)
+Jumping.Size = UDim2.new(0, 200, 0, 20)
+Jumping.Font = Enum.Font.SourceSans
+Jumping.Text = "Jumping:"
+Jumping.TextColor3 = Color3.fromRGB(255, 255, 255)
+Jumping.TextSize = 14.000
+Jumping.TextXAlignment = Enum.TextXAlignment.Left
+
+View.Name = "View"
+View.Parent = Frame
+View.AnchorPoint = Vector2.new(1, 0)
+View.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+View.BorderColor3 = Color3.fromRGB(0, 0, 0)
+View.BorderSizePixel = 0
+View.Position = UDim2.new(1, -4, 0, 88)
+View.Size = UDim2.new(0, 50, 0, 20)
+View.Font = Enum.Font.SourceSans
+View.Text = "View"
+View.TextColor3 = Color3.fromRGB(255, 255, 255)
+View.TextSize = 14.000
+
+Inventory.Name = "Inventory"
+Inventory.Parent = Frame
+Inventory.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Inventory.BackgroundTransparency = 1.000
+Inventory.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Inventory.BorderSizePixel = 0
+Inventory.Position = UDim2.new(0, 104, 0, 194)
+Inventory.Size = UDim2.new(0, 200, 0, 20)
+Inventory.Font = Enum.Font.SourceSans
+Inventory.Text = "Inventory"
+Inventory.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inventory.TextSize = 14.000
+Inventory.TextXAlignment = Enum.TextXAlignment.Left
+
+InventoryFrame.Name = "InventoryFrame"
+InventoryFrame.Parent = Frame
+InventoryFrame.AnchorPoint = Vector2.new(0, 1)
+InventoryFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+InventoryFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InventoryFrame.BorderSizePixel = 0
+InventoryFrame.Position = UDim2.new(0, 104, 1, -14)
+InventoryFrame.Size = UDim2.new(0, 292, 0, 70)
+
+Holder.Name = "Holder"
+Holder.Parent = InventoryFrame
+Holder.Active = true
+Holder.AnchorPoint = Vector2.new(0.5, 0.5)
+Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Holder.BackgroundTransparency = 1.000
+Holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Holder.BorderSizePixel = 0
+Holder.Position = UDim2.new(0.5, 0, 0.5, 0)
+Holder.Size = UDim2.new(0, 284, 0, 62)
+Holder.CanvasSize = UDim2.new(0, 0, 0, 0)
+Holder.ScrollBarThickness = 0
+
+UIGridLayout.Parent = Holder
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 43, 0, 43)
+
+Teleport.Name = "Teleport"
+Teleport.Parent = Frame
+Teleport.AnchorPoint = Vector2.new(1, 0)
+Teleport.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Teleport.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Teleport.BorderSizePixel = 0
+Teleport.Position = UDim2.new(1, -4, 0, 134)
+Teleport.Size = UDim2.new(0, 70, 0, 20)
+Teleport.Font = Enum.Font.SourceSans
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.TextSize = 14.000
+
+Copy.Name = "Copy"
+Copy.Parent = Frame
+Copy.AnchorPoint = Vector2.new(1, 0)
+Copy.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Copy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Copy.BorderSizePixel = 0
+Copy.Position = UDim2.new(1, -58, 0, 34)
+Copy.Size = UDim2.new(0, 50, 0, 20)
+Copy.Font = Enum.Font.SourceSans
+Copy.Text = "Copy"
+Copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Copy.TextSize = 14.000
+
+YourPosition.Name = "YourPosition"
+YourPosition.Parent = Frame
+YourPosition.AnchorPoint = Vector2.new(1, 0)
+YourPosition.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+YourPosition.BackgroundTransparency = 1.000
+YourPosition.BorderColor3 = Color3.fromRGB(0, 0, 0)
+YourPosition.BorderSizePixel = 0
+YourPosition.Position = UDim2.new(1, -4, 0, 194)
+YourPosition.Size = UDim2.new(0, 130, 0, 20)
+YourPosition.Font = Enum.Font.SourceSans
+YourPosition.Text = "Your Position:"
+YourPosition.TextColor3 = Color3.fromRGB(255, 255, 255)
+YourPosition.TextSize = 14.000
+YourPosition.TextXAlignment = Enum.TextXAlignment.Right
+
+-- << SCRIPTING >> --
+
+local selected_player
+local selected_button
+local visuals = {}
+local local_player = game.Players.LocalPlayer
+
+local function LoadData(player)
+	UserID.Text = "UserID: "..player.UserId
+	Distance.Text = (local_player.Character and local_player.Character:FindFirstChild("HumanoidRootPart") and player.Character and player.Character:FindFirstChild("HumanoidRootPart")) and "Distance: "..(player.Character.HumanoidRootPart.Position-local_player.Character.HumanoidRootPart.Position).Magnitude or "Distance: nil"
+	Health.Text = (player.Character and player.Character:FindFirstChild("Humanoid")) and "Health: "..player.Character.Humanoid.Health or "Health: nil"
+	AccountAge.Text = "AccountAge: "..player.AccountAge.." days"
+	Team.Text = (player.Team) and "Team: "..player.Team.Name or "Team: nil"
+	PlayerPosition.Text =  (player.Character and player.Character:FindFirstChild("HumanoidRootPart")) and "Position: "..math.round(player.Character.HumanoidRootPart.Position.X)..", "..math.round(player.Character.HumanoidRootPart.Position.Y)..", "..math.round(player.Character.HumanoidRootPart.Position.Z) or "Position: nil"
+	Sitting.Text =  (player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Sit) and "Sitting: Yes" or "Sitting: No"
+	Jumping.Text =  (player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Jump) and "Jumping: Yes" or "Jumping: No"
+	Profile.Image = "rbxthumb://type=AvatarHeadShot&id="..player.UserId.."&w=150&h=150"
+
+	for _, frame in pairs(InventoryFrame.Holder:GetChildren()) do
+		if frame:IsA("Frame") then
+			frame:Destroy()
+		end
+	end
+
+	local tool_count = #player.Backpack:GetChildren()
+
+	local tool = player.Character:FindFirstChildOfClass("Tool")
+	if tool then
+		tool_count += 1
+		local frame = Instance.new("Frame", Holder)
+		frame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+		frame.BorderColor3 = Color3.fromRGB(79, 125, 205)
+		frame.BorderMode = Enum.BorderMode.Inset
+		frame.BorderSizePixel = 3
+
+		local image = Instance.new("ImageLabel", frame)
+		image.AnchorPoint = Vector2.new(0.5, 0.5)
+		image.BackgroundTransparency = 1
+		image.Position = UDim2.new(0.5, 0, 0.5, 0)
+		image.Size = UDim2.new(0, 37, 0, 37)
+		image.Image = tool.TextureId
+	end
+
+	Inventory.Text = tool_count == 1 and "Inventory (1 tool)" or "Inventory ("..tool_count.." tools)"
+
+	for _, tool in pairs(player.Backpack:GetChildren()) do
+		local frame = Instance.new("Frame", Holder)
+		frame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+		frame.BorderSizePixel = 0
+
+		local image = Instance.new("ImageLabel", frame)
+		image.AnchorPoint = Vector2.new(0.5, 0.5)
+		image.BackgroundTransparency = 1
+		image.Position = UDim2.new(0.5, 0, 0.5, 0)
+		image.Size = UDim2.new(0, 37, 0, 37)
+		image.Image = tool.TextureId
+	end
+end
+
+local function UpdatePlayerlist()
+	for _, button in pairs(PlayerList:GetChildren()) do
+		if button:IsA("TextButton") then
+			button:Destroy()
+		end
+	end
+
+	for _, player in pairs(game.Players:GetPlayers()) do
+		local button = Instance.new("TextButton", PlayerList)
+		button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+		button.BorderSizePixel = 0
+		button.Size = UDim2.new(1, 0, 0, 30)
+		button.Text = player.Name
+		button.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+		button.MouseButton1Click:Connect(function()
+			if selected_button then
+				selected_button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			end
+			selected_button = button
+			selected_button.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+			selected_player = player
+			LoadData(player)
+			for _, visual in pairs(visuals) do
+				visual:Destroy()
+			end
+			for _, body_part in pairs(player.Character:GetChildren()) do
+				if body_part:IsA("BasePart") then
+					local adornment = Instance.new("BoxHandleAdornment", body_part)
+					table.insert(visuals, adornment)
+					adornment.AlwaysOnTop = true
+					adornment.Adornee = body_part
+					adornment.Size = body_part.Size
+					adornment.ZIndex = 2
+					adornment.Transparency = 0.6
+					adornment.Color3 = Color3.fromRGB(255, 255, 255)
+				end
+			end
+		end)
+	end
+end
+
+UpdatePlayerlist()
+
+local viewing = false
+View.MouseButton1Click:Connect(function()
+	if viewing == false and selected_player and selected_player.Character then
+		workspace.CurrentCamera.CameraSubject = selected_player.Character
+		View.Text = "Unview"
+		viewing = true
+	elseif viewing == true and local_player.Character then
+		workspace.CurrentCamera.CameraSubject = local_player.Character
+		View.Text = "View"
+		viewing = false
+	end
+end)
+
+Copy.MouseButton1Click:Connect(function()
+	if setclipboard then
+		setclipboard(selected_player.UserId)
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Successfully copied to clipboard",
+			Text = "",
+			Duration = 3,
+		})
+	else
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Failed to copy",
+			Text = "Your executor does not support the setclipboard() function",
+			Duration = 3,
+		})
+	end
+end)
+
+Teleport.MouseButton1Click:Connect(function()
+	if local_player.Character and local_player.Character.HumanoidRootPart and selected_player and selected_player.Character and selected_player.Character.HumanoidRootPart then
+		local_player.Character.HumanoidRootPart.CFrame = selected_player.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+	end
+end)
+
+Close.MouseButton1Click:Connect(function()
+	for _, visual in pairs(visuals) do
+		visual:Destroy()
+	end
+	AdvancedUserInfo:Destroy()
+end)
+
+game.Players.PlayerAdded:Connect(UpdatePlayerlist)
+game.Players.PlayerRemoving:Connect(UpdatePlayerlist)
+
+coroutine.wrap(function()
+	while wait(0.1) do
+		if selected_player then
+			LoadData(selected_player)
+		end
+		if local_player.Character and local_player.Character:FindFirstChild("HumanoidRootPart") then
+			YourPosition.Text = "Your Position: "..math.round(local_player.Character.HumanoidRootPart.Position.X)..", "..math.round(local_player.Character.HumanoidRootPart.Position.Y)..", "..math.round(local_player.Character.HumanoidRootPart.Position.Z)
+		end
+	end
+end)()
+
+-- DRAG (NOT MINE) --
+
+local UserInputService = game:GetService("UserInputService")
+
+local gui = Frame
+
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		update(input)
+	end
+end)
