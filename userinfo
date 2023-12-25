@@ -26,8 +26,10 @@ local Copy = Instance.new("TextButton")
 local YourPosition = Instance.new("TextLabel")
 
 AdvancedUserInfo.Name = "AdvancedUserInfo"
-AdvancedUserInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+AdvancedUserInfo.Parent = game.CoreGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
 AdvancedUserInfo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+AdvancedUserInfo.ResetOnSpawn = false
+AdvancedUserInfo.IgnoreGuiInset = true
 
 Frame.Parent = AdvancedUserInfo
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -80,6 +82,7 @@ PlayerList.BorderSizePixel = 0
 PlayerList.Position = UDim2.new(0, 0, 0, 34)
 PlayerList.Size = UDim2.new(0, 100, 1, -38)
 PlayerList.CanvasSize = UDim2.new(0, 0, 0, 0)
+PlayerList.AutomaticCanvasSize = Enum.AutomaticSize.Y
 PlayerList.ScrollBarThickness = 0
 
 UIListLayout.Parent = PlayerList
